@@ -5,7 +5,7 @@ O curso está sendo pensado para quem está tendo o primeiro contato com R. É u
 Tópicos:
 1. Intro + Help + Bibliotecas + Variáveis + Tipos
 2. Subset (Lógico e numérico) + If + For
-3. Apply
+3. Apply (+ função?)
 4. Arquivo + Revisão
 5. Manipulação de dados + Arquivo
 6. Reshape
