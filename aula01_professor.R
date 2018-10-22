@@ -74,7 +74,7 @@ ls() #note que somente a variavel a continua armazenada
 # E para fazer comentarios, usa-se a cerquilha (#)
 
 # Tipos de dados ----------------------------------------------------------
-# A função "class()" eh utilizada para saber qual eh a 
+# A funcao "class()" eh utilizada para saber qual eh a 
 # classe de determinada variavel.
 
 # LOGICAL
@@ -104,7 +104,7 @@ class(y)
 # eh inteiro!
 
 # CHARACTER
-y <- "I love FA084!"
+y <- "texto"
 class(y)
 
 # Lembrando que vetores so podem armazenar o mesmo tipo de variavel
@@ -157,16 +157,16 @@ z
 
 ## 1) Durante a criacao do vetor
 temp_campinas_1 <- c("seg" = 25, "ter" = 27, 
-                            "qua" = 32, "qui" = 30, "sex" = 25)
+                     "qua" = 32, "qui" = 30, "sex" = 25)
 temp_campinas_1
 
-## 2) Apos a criação do vetor
+## 2) Apos a criacao do vetor
 temperaturas <- c(25, 27, 32, 30, 25)
 temp_campinas_2 <- temperaturas
 temp_campinas_2
 
 names(temp_campinas_2) <- c("seg","ter",
-                                   "qua","qui","sex")
+                            "qua","qui","sex")
 temp_campinas_2
 
 # Ou ainda:
@@ -187,10 +187,10 @@ y <- c(4,5,6) # Vetor y
 # Soma dos vetores (elemento por elemento)
 x+y
 
-# Divisão dos vetores (elemento por elemento)
+# Divisao dos vetores (elemento por elemento)
 x/y
 
-# Exponenciação dos vetores (elemento por elemento)
+# Exponenciacao dos vetores (elemento por elemento)
 x^y
 
 # Se os vetores tiverem comprimentos distintos, o R repete o menor,
@@ -206,7 +206,7 @@ x
 a+x # Cada elemento do vetor eh, neste caso, somado 
 # ao escalar e analogo para as demais operacoes!
 
-# Para operações entre vetores, os operadores sao diferentes,
+# Para operacoes entre vetores, os operadores sao diferentes,
 # por exemplo:
 x <- c(2,2)
 y <- c(1,2)
@@ -216,22 +216,22 @@ x%*%t(y)
 x <- 1:3
 
 # Para selecionar UM elemento do vetor x 
-# (apenas o 2º elemento, por exemplo):
+# (apenas o 2o elemento, por exemplo):
 x[2]
 
 # Para selecionar MULTIPLOS elementos do vetor x 
-#(do 2º ao 3º elemento, p.e.):
+#(do 2o ao 3o elemento, p.e.):
 # O : age como o 'ao'. Ele estabelece um comecando no primeiro numero
 # e terminando no segundo.
 x[2:3]
 
 # Para selecionar todos os elementos de x, com EXCECAO de UM:
-## (nao selecionar o 2º elemento, p.e.)
+## (nao selecionar o 2o elemento, p.e.)
 x[-2]
 
-# Para selecionar todos os elementos de x, com EXCEÇÃO de 
+# Para selecionar todos os elementos de x, com EXCE??O de 
 #DOIS OU MAIS:
-## (nao selecionar o 1º e 2º elemento, p.e.)
+## (nao selecionar o 1o e 2o elemento, p.e.)
 x[-c(1,2)]
 
 # Matrizes e data-frames --------------------------------------------------
@@ -245,7 +245,7 @@ x[-c(1,2)]
 ?matrix
 
 z <- matrix(seq(1,12),nrow = 4, ncol = 3)
-# Por padrão, os elementos sao preenchidos column-wise, 
+# Por padrao, os elementos sao preenchidos column-wise, 
 # ou seja, uma coluna por vez
 z
 
@@ -257,14 +257,14 @@ z[3:4,2:3]
 z[,2:3]
 
 ## Para selecionar todas as linhas da matriz E uma coluna:
-### saída em uma linha
+### saida em uma linha
 z[,1]
 
-# Para mostrar as dimensões da matriz:
+# Para mostrar as dimens?es da matriz:
 dim(z) #numero de linhas, numero de colunas
 
 # Um data-frame eh uma matriz que admite mais de um tipo de dados
-x <- c("Monique", "Nadia", "Luiz")
+x <- c("Monique", "Matheus", "Lique")
 class(x)
 y <- c(9, 9, 10)
 class(y)
@@ -293,40 +293,12 @@ media_p3 <- mean(avaliacao$nota3)
 media_p3
 
 # Para inserir linhas novas, eu crio um data-frame novo com as linhas
-# novas. Além disso, devo atribuir o mesmo nome de colunas ANTES 
+# novas. Al?m disso, devo atribuir o mesmo nome de colunas ANTES 
 # de juntar os dois data-frames, com o comando rbind.
 
-aluno_novo <- data.frame("Bocca", 9, FALSE, 9, 9, 
+aluno_novo <- data.frame("Rafaella", 9, FALSE, 9, 9, 
                          stringsAsFactors = FALSE)
 colnames(aluno_novo) <- colnames(avaliacao)
 aluno_novo
 
 avaliacao <- rbind(avaliacao,aluno_novo)
-
-# Leitura de Dados --------------------------------------------------------
-# Duas funcoes sao usadas para mudar pasta de trabalho, 
-# onde o R vai salvar ou carregar arquivos por padrão
-
-# O getwd() indica qual a pasta atual
-getwd()
-
-# O setwd() muda a pasta para uma que você queira
-#setwd("C:/Users/")
-
-# Para ler arquivos no formato csv:
-dados <- read.csv("dataset_meteorologicos.csv")
-
-# Para visualizar os nomes dos atributos (das colunas) :
-names(dados)
-
-# Para mostrar as dimensoes:
-dim(dados)
-
-# Para mostrar a classe do conjunto de dados:
-class(dados)
-
-# Para mostrar o cabecalho do conjunto de dados:
-head(dados)
-
-# Para mostrar um resumo do conjunto de dados:
-summary(dados)
