@@ -3,13 +3,9 @@ O curso está sendo pensado para quem está tendo o primeiro contato com R. É u
 
 
 Tópicos:
-1. Intro + Help + Bibliotecas + Variáveis + Tipos
-2. Subset (Lógico e numérico) + If + For
-3. Apply (+ função?)
-4. Bibliotecas + Arquivo + Revisão
-5. Manipulação de dados + Arquivo
-6. Reshape
-7. Aggregate + Gráficos
-8. Tidyverse + ggplot2
-9. Tidyverse + ggplot2
-10. Revisão	
+1. Introdução, help, variáveis e tipos
+2. Subset (lógico e numérico), condicionais e loops
+3. Arquivo (read, write, save, load), bibliotecas, funções, apply, e gráficos
+4. Manipulação de dados (revisão), reshape, aggregate
+5. Tidyverse, ggplot2
+6. Tidyverse, ggplot2
