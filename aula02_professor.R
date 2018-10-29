@@ -1,27 +1,20 @@
-# Leitura de Dados --------------------------------------------------------
-# Duas funcoes sao usadas para mudar pasta de trabalho, 
-# onde o R vai salvar ou carregar arquivos por padr?o
+# Subset (Lógico e numérico) + If + For
 
-# O getwd() indica qual a pasta atual
-getwd()
+# A seguir ha uma lista de nomes que coincidem com os nomes
+# dos matriculados na turma:
 
-# O setwd() muda a pasta para uma que voc? queira
-#setwd("C:/Users/")
+nomes <- c("Alice","Sophia","Helena","Laura","Isabella","Manuela",
+           "Júlia","Heloísa","Miguel","Arthur","Bernardo",
+           "Heitor", "Davi", "Lorenzo", "Pedro", "Gabriel")
 
-# Para ler arquivos no formato csv:
-dados <- read.csv("dataset_meteorologicos.csv")
+## Serao gerados tantos numeros aleatorios entre 0 e 10 quantos 
+## nomes ha na variavel "nomes", usando a funcao runif.
+## A funcao round arredonda as notas para duas casas decimais
 
-# Para visualizar os nomes dos atributos (das colunas) :
-names(dados)
+P1 <- round(runif(length(nomes), 0.0, 10.0),2)
+P2 <- round(runif(length(nomes), 0.0, 10.0),2)
+P3 <- round(runif(length(nomes), 0.0, 10.0),2)
 
-# Para mostrar as dimensoes:
-dim(dados)
-
-# Para mostrar a classe do conjunto de dados:
-class(dados)
-
-# Para mostrar o cabecalho do conjunto de dados:
-head(dados)
-
-# Para mostrar um resumo do conjunto de dados:
-summary(dados)
+# Para criar um data-frame com as notas, posso usar a funcao cbind
+notas_turma <- as.data.frame(nomes, stringsAsFactors = FALSE)
+notas_turma <- cbind(notas_turma,P1)
