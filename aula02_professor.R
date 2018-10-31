@@ -36,9 +36,9 @@ if (a > b){
 
 # O if-else tambem existe e eh parecido.
 if (a < b){
-  print("a eh maior do que b")
+  print("a eh menor do que b")
 } else {
-  print("b eh maior do que a")
+  print("b eh menor ou igual a a")
 }
 
 # E se eu quiser fazer para todo um dataframe?
@@ -53,7 +53,7 @@ if(dados$Species == "setosa"){
 # eh um erro bem comum e por isso estou chamando a atencao pra ele. Uma
 # forma de consertar eh usar o subset logico que foi apresentado.
 
-dados$Sepal.Length[dados$Species == "setosa"] <- dados$Sepal.Length + 10
+dados$Sepal.Length[dados$Species == "setosa"] <- dados$Sepal.Length[dados$Species == "setosa"] + 10
 View(dados)
 
 # Outra forma de contornar essa situacao eh usando loops. A melhor forma eh a 
@@ -63,9 +63,9 @@ View(dados)
 # Na proxima aula vamos apresentar outra forma de fugir do loop.
 
 for(i in 1:nrow(dados)){
-  if(dados$Species == "setosa"){
+  if(dados$Species[i] == "setosa"){
    
-    dados$Sepal.Length <- dados$Sepal.Length + 10
+    dados$Sepal.Length[i] <- dados$Sepal.Length[i] + 10
      
   }
 }
