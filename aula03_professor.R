@@ -92,3 +92,29 @@ plot(amostra_1$s[amostra_1$kgf > -5], amostra_1$kgf[amostra_1$kgf > -5],
      xlab = "time", ylab = "stress")
 points(amostra_2$s[amostra_2$kgf > -5], amostra_2$kgf[amostra_2$kgf > -5],
        col = "blue")
+
+
+
+t0=Sys.time()
+df = read.csv('~/data/AirQualityUCI/air_quality.csv')
+t1=Sys.time()
+t1-t0
+
+nums = df[,3:15]
+vec = vector()
+for(i in 1:13){
+  vec[i] = mean(nums[,i])
+}
+
+apply(nums,2,mean)
+
+#Criar subset do iris com as linhas pares
+
+#write o subset
+
+#abrir no excel
+
+#noção de médias por coluna
+#usando for e usando apply
+#fazer subset por espécie
+#analogia de 30 linhas com 2039402943012943 linhas
